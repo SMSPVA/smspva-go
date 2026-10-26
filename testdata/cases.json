@@ -1,0 +1,1373 @@
+[
+  {
+    "key": "activation.getBalance",
+    "family": "activation",
+    "jsName": "getBalance",
+    "pyName": "get_balance",
+    "path": "/activation/balance",
+    "method": "GET",
+    "params": {},
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "balance": "10.50"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getUserInfo",
+    "family": "activation",
+    "jsName": "getUserInfo",
+    "pyName": "get_user_info",
+    "path": "/activation/userinfo",
+    "method": "GET",
+    "params": {},
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "balance": "10.50",
+        "name": "user123",
+        "karma": 100.5
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getOperators",
+    "family": "activation",
+    "jsName": "getOperators",
+    "pyName": "get_operators",
+    "path": "/activation/operators/{country}",
+    "method": "GET",
+    "params": {
+      "country": "UK"
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "country": "UK",
+        "operators": [
+          "DonorAlpha_UK"
+        ]
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getConversions",
+    "family": "activation",
+    "jsName": "getConversions",
+    "pyName": "get_conversions",
+    "path": "/activation/conversions/{service}",
+    "method": "GET",
+    "params": {
+      "service": "opt1"
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "service": "opt1",
+        "conversions": {
+          "UA": 3,
+          "KZ": 2,
+          "RU": 3
+        }
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getMessageTypeSettings",
+    "family": "activation",
+    "jsName": "getMessageTypeSettings",
+    "pyName": "get_message_type_settings",
+    "path": "/activation/countryservicesettings",
+    "method": "GET",
+    "params": {},
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "country": "",
+          "service": "opt20",
+          "operator": "",
+          "voice": 0,
+          "caller": 0,
+          "sms": 1
+        },
+        {
+          "country": "FR",
+          "service": "opt20",
+          "operator": "",
+          "voice": 1,
+          "caller": 0,
+          "sms": 1
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getAllNumberCounts",
+    "family": "activation",
+    "jsName": "getAllNumberCounts",
+    "pyName": "get_all_number_counts",
+    "path": "/activation/countnumbers",
+    "method": "GET",
+    "params": {},
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "operator": "Primetel_CY",
+          "country": "CY",
+          "services": [
+            {
+              "service": "opt0",
+              "total": 12
+            }
+          ]
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getCountryNumberCounts",
+    "family": "activation",
+    "jsName": "getCountryNumberCounts",
+    "pyName": "get_country_number_counts",
+    "path": "/activation/countnumbers/{country}",
+    "method": "GET",
+    "params": {
+      "country": "UK"
+    },
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "operator": "Primetel_CY",
+          "country": "CY",
+          "services": [
+            {
+              "service": "opt0",
+              "total": 12
+            }
+          ]
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getServicePrice",
+    "family": "activation",
+    "jsName": "getServicePrice",
+    "pyName": "get_service_price",
+    "path": "/activation/serviceprice/{country}/{service}",
+    "method": "GET",
+    "params": {
+      "country": "BD",
+      "service": "opt0",
+      "voice": 0
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "service": "opt0",
+        "serviceDescription": "myopinions & erewards",
+        "country": "KZ",
+        "price": "2.34",
+        "priceByOperators": {
+          "Other_KZ": "0.39",
+          "Activ_KZ": "0.39"
+        }
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getCountryOperatorPrices",
+    "family": "activation",
+    "jsName": "getCountryOperatorPrices",
+    "pyName": "get_country_operator_prices",
+    "path": "/activation/serviceprice/{country}",
+    "method": "GET",
+    "params": {
+      "country": "UK",
+      "voice": 0
+    },
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "s": "opt0",
+          "sd": "myopinions & erewards",
+          "c": "UK",
+          "p": "0.58",
+          "po": {
+            "Hutchison_UK": "0.58",
+            "ASDA_UK": "0.58",
+            "Vodafone_UK": "0.65"
+          }
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getServicePrices",
+    "family": "activation",
+    "jsName": "getServicePrices",
+    "pyName": "get_service_prices",
+    "path": "/activation/serviceprices/{service}",
+    "method": "GET",
+    "params": {
+      "service": "opt20",
+      "voice": 0
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "scode": "opt20",
+        "sname": "WhatsApp",
+        "clist": [
+          {
+            "ccode": "UK",
+            "cname": "United Kingdom",
+            "opers": [
+              {
+                "opcode": "DonorAlpha_UK",
+                "price": 0.65,
+                "count": 9999
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getAllServicePrices",
+    "family": "activation",
+    "jsName": "getAllServicePrices",
+    "pyName": "get_all_service_prices",
+    "path": "/activation/servicesprices",
+    "method": "GET",
+    "params": {
+      "voice": 0
+    },
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "service": "opt0",
+          "serviceDescription": "myopinions & erewards",
+          "country": "CY",
+          "price": "0.50"
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getNumber",
+    "family": "activation",
+    "jsName": "getNumber",
+    "pyName": "get_number",
+    "path": "/activation/number/{country}/{service}",
+    "method": "GET",
+    "params": {
+      "country": "BD",
+      "service": "opt20",
+      "voice": 0
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456,
+        "phoneNumber": 9876544321,
+        "countryCode": "BD",
+        "orderExpireIn": 600
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getNumberByOperator",
+    "family": "activation",
+    "jsName": "getNumberByOperator",
+    "pyName": "get_number_by_operator",
+    "path": "/activation/number/{country}/{service}/{operator}",
+    "method": "GET",
+    "params": {
+      "country": "BD",
+      "service": "opt20",
+      "operator": "Grameenphone_BD",
+      "voice": 0
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456,
+        "phoneNumber": 9876544321,
+        "countryCode": "BD",
+        "orderExpireIn": 600
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.receiveSms",
+    "family": "activation",
+    "jsName": "receiveSms",
+    "pyName": "receive_sms",
+    "path": "/activation/sms/{orderid}",
+    "method": "GET",
+    "params": {
+      "partnerkey": "yourpartnerkeyhere",
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "sms": {
+          "code": "123456",
+          "fullText": "Your verification code is 123456"
+        },
+        "orderId": 123456,
+        "orderExpireIn": 420
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getOrders",
+    "family": "activation",
+    "jsName": "getOrders",
+    "pyName": "get_orders",
+    "path": "/activation/orders",
+    "method": "GET",
+    "params": {},
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orders": [
+          {
+            "orderId": 123456,
+            "phoneNumber": 987654321,
+            "countryCode": "+7",
+            "orderExpireIn": 599,
+            "service": "opt0",
+            "country": "UK",
+            "status": "PENDING_SMS|SMS_READY|PENDING_PAYMENT",
+            "sms": {
+              "code": "1234",
+              "fullText": "Your service Activation code is 1234. Don't tell it anybody"
+            }
+          }
+        ]
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getNumberStatus",
+    "family": "activation",
+    "jsName": "getNumberStatus",
+    "pyName": "get_number_status",
+    "path": "/activation/numberstatus/{number}/{service}",
+    "method": "GET",
+    "params": {
+      "number": "98765432",
+      "service": "opt0"
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "number": "98765432",
+        "orderId": 123456,
+        "countryCode": "+7"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.clearSms",
+    "family": "activation",
+    "jsName": "clearSms",
+    "pyName": "clear_sms",
+    "path": "/activation/clearsms/{orderid}",
+    "method": "PUT",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456,
+        "orderExpireIn": 599
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.stopSms",
+    "family": "activation",
+    "jsName": "stopSms",
+    "pyName": "stop_sms",
+    "path": "/activation/stopsms/{orderid}",
+    "method": "PUT",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.cancelOrder",
+    "family": "activation",
+    "jsName": "cancelOrder",
+    "pyName": "cancel_order",
+    "path": "/activation/cancelorder/{orderid}",
+    "method": "PUT",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.blockNumber",
+    "family": "activation",
+    "jsName": "blockNumber",
+    "pyName": "block_number",
+    "path": "/activation/blocknumber/{orderid}",
+    "method": "PUT",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.getCountries",
+    "family": "rental",
+    "jsName": "getCountries",
+    "pyName": "get_countries",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "getcountries",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "name": "United States",
+          "code": "US",
+          "url_country_name": "united-states",
+          "rent_switch_type": "FAST",
+          "rent_avail_prolong": "1"
+        }
+      ]
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.getDefaultServices",
+    "family": "rental",
+    "jsName": "getDefaultServices",
+    "pyName": "get_default_services",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "get_default_services",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "name": "WhatsApp",
+          "service": "opt20",
+          "priceForDay": "0.20",
+          "img": "images/ico/whatsapp.png",
+          "DAYP": "30",
+          "PROC": "30"
+        }
+      ]
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.getCountriesByService",
+    "family": "rental",
+    "jsName": "getCountriesByService",
+    "pyName": "get_countries_by_service",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "get_country_by_service",
+    "params": {
+      "service": "opt20",
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "dynamic": {
+          "service_name": "Fiverr",
+          "price": "0.20",
+          "procent_days": "30",
+          "procent": "30",
+          "day_step": "0.00",
+          "country": "KZ",
+          "phoneAmount": 79
+        }
+      }
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.getData",
+    "family": "rental",
+    "jsName": "getData",
+    "pyName": "get_data",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "getdata",
+    "params": {
+      "country": "KZ",
+      "dtype": "week",
+      "dcount": 1,
+      "extend": "1"
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "services": [
+          {
+            "name": "Airbnb",
+            "service": "opt46",
+            "price_day": 6,
+            "count": 359,
+            "img": "images/ico/whatsapp.png",
+            "procent_days": 0,
+            "procent": 0,
+            "day_step": 0
+          }
+        ],
+        "totalAmount": 100
+      }
+    },
+    "auth": "optional"
+  },
+  {
+    "key": "rental.getDataWithProviders",
+    "family": "rental",
+    "jsName": "getDataWithProviders",
+    "pyName": "get_data_with_providers",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "getdataWithProviders",
+    "params": {
+      "country": "KZ",
+      "dtype": "week",
+      "dcount": 1,
+      "extend": "1"
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "services": [
+          {
+            "name": "1cupis & okcupid & winline",
+            "service": "opt48",
+            "price_day": 5,
+            "img": "images/ico/cupis_okcupid_winline.ico",
+            "procent_days": 0,
+            "procent": 0,
+            "day_step": 0,
+            "count": {
+              "Claro_AR": 27
+            },
+            "totalCount": 12
+          }
+        ],
+        "totalAmount": 1735,
+        "allOperators": [
+          "Claro_AR"
+        ]
+      }
+    },
+    "auth": "optional"
+  },
+  {
+    "key": "rental.getCount",
+    "family": "rental",
+    "jsName": "getCount",
+    "pyName": "get_count",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "getcount",
+    "params": {
+      "country": "KZ",
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1,
+      "data": {}
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.getCountWithProviders",
+    "family": "rental",
+    "jsName": "getCountWithProviders",
+    "pyName": "get_count_with_providers",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "getCountWithProviders",
+    "params": {
+      "country": "KZ",
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "opt48": {
+          "Amount": {
+            "Limbo_AT": 12,
+            "Tele2_AT": 1,
+            "yesss_AT": 69
+          },
+          "Total": 82
+        }
+      }
+    },
+    "auth": "optional"
+  },
+  {
+    "key": "rental.getMultiServiceCount",
+    "family": "rental",
+    "jsName": "getMultiServiceCount",
+    "pyName": "get_multi_service_count",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "get_count_multi",
+    "params": {
+      "country": "KZ",
+      "services": "opt1,opt2",
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "count": 10
+      }
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.getCanadaPaypalDays",
+    "family": "rental",
+    "jsName": "getCanadaPaypalDays",
+    "pyName": "get_canada_paypal_days",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "get_days_canada_paypal",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "Days": 30,
+          "Amount": 10
+        }
+      ]
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.getMinimumPaypalDays",
+    "family": "rental",
+    "jsName": "getMinimumPaypalDays",
+    "pyName": "get_minimum_paypal_days",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "get_min_paypal_days",
+    "params": {
+      "country": "CA",
+      "service": "opt83"
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "Days": 30,
+        "Status": 1,
+        "Message": ""
+      }
+    },
+    "auth": "none"
+  },
+  {
+    "key": "rental.create",
+    "family": "rental",
+    "jsName": "create",
+    "pyName": "create",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "create",
+    "params": {
+      "dtype": "week",
+      "dcount": 1,
+      "country": "KZ",
+      "service": "opt6",
+      "provider": "T-Mobile",
+      "partner_key": "partnerkeyhere"
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 40370,
+        "pnumber": "9096037108",
+        "ccode": "+7",
+        "service": "opt6",
+        "until": "1587633960"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.createMulti",
+    "family": "rental",
+    "jsName": "createMulti",
+    "pyName": "create_multi",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "create_multi",
+    "params": {
+      "dtype": "week",
+      "dcount": 1,
+      "country": "KZ",
+      "services": "opt6,opt7,opt8",
+      "provider": "T-Mobile",
+      "partner_key": "partnerkeyhere"
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 40370,
+        "pnumber": "9096037108",
+        "ccode": "+7",
+        "service": "opt6",
+        "until": "1587633960"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.addServiceToOrder",
+    "family": "rental",
+    "jsName": "addServiceToOrder",
+    "pyName": "add_service_to_order",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "add_service_to_order",
+    "params": {
+      "id": 56547,
+      "service": "opt89",
+      "pnumber": "79335445295",
+      "rent_days": 7
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 4211321,
+        "pnumber": "37067181111",
+        "service": "opt95",
+        "until": 1771583220
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.getOrders",
+    "family": "rental",
+    "jsName": "getOrders",
+    "pyName": "get_orders",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "orders",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 40300,
+          "scode": "opt16",
+          "sname": "Instagram",
+          "state": 0,
+          "pnumber": "9096068511",
+          "ccode": "+7",
+          "cname": "KZ",
+          "hasnewsms": false,
+          "until": 1587552240,
+          "canprolong": true,
+          "canprolongmax": 162,
+          "canprolonguntil": 1634883780,
+          "lastonline": 1586947920
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.activate",
+    "family": "rental",
+    "jsName": "activate",
+    "pyName": "activate",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "activate",
+    "params": {
+      "id": 1
+    },
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 123
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.getSms",
+    "family": "rental",
+    "jsName": "getSms",
+    "pyName": "get_sms",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "sms",
+    "params": {
+      "id": 123
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "SmsList": [
+          {
+            "text": "Code Instagram: 671 094.",
+            "sender": "FACEBOOK",
+            "date": 1586948100
+          }
+        ],
+        "OtherSms": []
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.prolong",
+    "family": "rental",
+    "jsName": "prolong",
+    "pyName": "prolong",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "prolong",
+    "params": {
+      "id": 123,
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.prolongByDays",
+    "family": "rental",
+    "jsName": "prolongByDays",
+    "pyName": "prolong_by_days",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "prolong_max",
+    "params": {
+      "id": 123,
+      "dtype": "day",
+      "dcount": 5
+    },
+    "response": {
+      "status": 1
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.deleteOrder",
+    "family": "rental",
+    "jsName": "deleteOrder",
+    "pyName": "delete_order",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "delete",
+    "params": {
+      "id": 123
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 123
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.getHistory",
+    "family": "rental",
+    "jsName": "getHistory",
+    "pyName": "get_history",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "get_rent_history",
+    "params": {
+      "skip": 0,
+      "take": 10
+    },
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "orderId": 857191,
+          "resourceCode": "opt9",
+          "number": "37067787324",
+          "branchId": 684,
+          "haveSms": false,
+          "isAvailForRestore": true,
+          "days": 30,
+          "country": "LT",
+          "begin": 1768902473,
+          "end": 1771494473,
+          "closed": 1768903921
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.getRestoreCost",
+    "family": "rental",
+    "jsName": "getRestoreCost",
+    "pyName": "get_restore_cost",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "restore_user_precalc",
+    "params": {
+      "id": 123
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "ccode": "LT",
+        "scode": "opt9",
+        "price": 1.5,
+        "sname": "Instagram",
+        "pnumber": "37067787324",
+        "outdays": 5,
+        "orderid": 857191,
+        "prolongTo": 30
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "rental.restore",
+    "family": "rental",
+    "jsName": "restore",
+    "pyName": "restore",
+    "path": "/api/rent.php",
+    "method": "GET",
+    "action": "restore_user",
+    "params": {
+      "id": 123
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 123456
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.getProviders",
+    "family": "email",
+    "jsName": "getProviders",
+    "pyName": "get_providers",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_providers",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 2,
+          "pcode": "gmailcom",
+          "name": "Gmail"
+        },
+        {
+          "id": 6,
+          "pcode": "outlookcom",
+          "name": "Microsoft Outlook"
+        }
+      ]
+    },
+    "auth": "none"
+  },
+  {
+    "key": "email.getData",
+    "family": "email",
+    "jsName": "getData",
+    "pyName": "get_data",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_data",
+    "params": {
+      "pcode": "outlookcom"
+    },
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "count": 40,
+          "scode": "twitter",
+          "sname": "Twitter",
+          "price": 0.1,
+          "alias_price": 0.25,
+          "icon": "/templates/SMSv1EN/images/ico/twitter.png",
+          "months_discount": 20
+        }
+      ]
+    },
+    "auth": "none"
+  },
+  {
+    "key": "email.getCount",
+    "family": "email",
+    "jsName": "getCount",
+    "pyName": "get_count",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_count",
+    "params": {
+      "pcode": "outlookcom"
+    },
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "count": 40,
+          "scode": "twitter"
+        },
+        {
+          "count": 38,
+          "scode": "fb"
+        }
+      ]
+    },
+    "auth": "none"
+  },
+  {
+    "key": "email.createOrder",
+    "family": "email",
+    "jsName": "createOrder",
+    "pyName": "create_order",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "create_order",
+    "params": {
+      "scode": "twitter",
+      "pcode": "outlookcom",
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 123456,
+        "email": "mailbox@outlook.com",
+        "scode": "twitter",
+        "pcode": "outlookcom",
+        "expireDate": 1855324800
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.getOrders",
+    "family": "email",
+    "jsName": "getOrders",
+    "pyName": "get_orders",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_orders",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 123456,
+          "address": "mailbox@outlook.com",
+          "scode": "twitter",
+          "pcode": "outlookcom",
+          "expireDate": 1855324800,
+          "mesCount": 1,
+          "aliases": [],
+          "sname": "Twitter"
+        },
+        {
+          "id": 123457,
+          "address": "sample@gmail.com",
+          "scode": "twitter",
+          "pcode": "gmailcom",
+          "expireDate": 1855324800,
+          "mesCount": 0,
+          "aliases": [
+            {
+              "id": 88,
+              "address": "sam.ple@gmail.com",
+              "mesCount": 1,
+              "isPaid": false
+            }
+          ],
+          "sname": "Twitter"
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.getMails",
+    "family": "email",
+    "jsName": "getMails",
+    "pyName": "get_mails",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_mails",
+    "params": {
+      "orderid": 123456,
+      "t": 50,
+      "s": 0,
+      "sq": "verification"
+    },
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 6,
+          "sender": "noreply@example.com",
+          "subject": "Verification code",
+          "preview": "Your code: 12345",
+          "addedAt": "2026-10-22T10:00:00.000Z"
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.getMailBody",
+    "family": "email",
+    "jsName": "getMailBody",
+    "pyName": "get_mail_body",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_mail_body",
+    "params": {
+      "orderid": 123456,
+      "emailid": 6
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 6,
+        "sender": "noreply@example.com",
+        "subject": "Verification code",
+        "body": "<p>Your code: 12345</p>",
+        "addedAt": "2026-10-22T10:00:00.000Z"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.buyAlias",
+    "family": "email",
+    "jsName": "buyAlias",
+    "pyName": "buy_alias",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "buy_alias",
+    "params": {
+      "orderid": 123456,
+      "aliasid": 88
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "alias": "sam.ple@gmail.com"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.getMailsByAlias",
+    "family": "email",
+    "jsName": "getMailsByAlias",
+    "pyName": "get_mails_by_alias",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_mails_by_alias",
+    "params": {
+      "orderid": 123456,
+      "aliasid": 88,
+      "t": 50,
+      "s": 0,
+      "sq": "verification"
+    },
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 6,
+          "sender": "noreply@example.com",
+          "subject": "Verification code",
+          "preview": "Your code: 12345",
+          "addedAt": "2026-10-22T10:00:00.000Z"
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.prolongOrder",
+    "family": "email",
+    "jsName": "prolongOrder",
+    "pyName": "prolong_order",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "prolong_order",
+    "params": {
+      "orderid": 123456,
+      "dtype": "week",
+      "dcount": 1
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 123456,
+        "email": "mailbox@outlook.com",
+        "service": "Twitter"
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.cancelOrder",
+    "family": "email",
+    "jsName": "cancelOrder",
+    "pyName": "cancel_order",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "cancel_order",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "status": 1,
+      "data": true
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.getArchivedOrders",
+    "family": "email",
+    "jsName": "getArchivedOrders",
+    "pyName": "get_archived_orders",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "get_archived_orders",
+    "params": {},
+    "response": {
+      "status": 1,
+      "data": [
+        {
+          "id": 123455,
+          "address": "archived@outlook.com",
+          "scode": "twitter",
+          "pcode": "outlookcom",
+          "expireDate": 1767225600,
+          "sname": "Twitter"
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.calcRestoreOrder",
+    "family": "email",
+    "jsName": "calcRestoreOrder",
+    "pyName": "calc_restore_order",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "calc_restore_order",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "status": 1,
+      "data": 0.7
+    },
+    "auth": "required"
+  },
+  {
+    "key": "email.restoreOrder",
+    "family": "email",
+    "jsName": "restoreOrder",
+    "pyName": "restore_order",
+    "path": "/api/rent_email.php",
+    "method": "GET",
+    "action": "restore_order",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "status": 1,
+      "data": {
+        "id": 123455,
+        "email": "archived@outlook.com",
+        "service": "Twitter"
+      }
+    },
+    "auth": "required"
+  }
+]

@@ -1,0 +1,1804 @@
+{
+  "version": 1,
+  "sources": {
+    "activation": "346b66b937d5dadb70cf3db8d12bb71e1d5470afb7664b1b8b7fce28b61128da",
+    "rental": "f827b7dc7dca866f9e4d62c00629e53a3eec9321ab91d600543eabce596b0a43",
+    "email": "6535e673f8abdd399cd8c839ccb7d1da3a861392467f76321c6ad0d257f401a5"
+  },
+  "operations": {
+    "activation.getBalance": {
+      "family": "activation",
+      "jsName": "getBalance",
+      "pyName": "get_balance",
+      "slug": "balance",
+      "path": "/activation/balance",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getUserInfo": {
+      "family": "activation",
+      "jsName": "getUserInfo",
+      "pyName": "get_user_info",
+      "slug": "userinfo",
+      "path": "/activation/userinfo",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getOperators": {
+      "family": "activation",
+      "jsName": "getOperators",
+      "pyName": "get_operators",
+      "slug": "operators",
+      "path": "/activation/operators/{country}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getConversions": {
+      "family": "activation",
+      "jsName": "getConversions",
+      "pyName": "get_conversions",
+      "slug": "conversions",
+      "path": "/activation/conversions/{service}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "service",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getMessageTypeSettings": {
+      "family": "activation",
+      "jsName": "getMessageTypeSettings",
+      "pyName": "get_message_type_settings",
+      "slug": "country-service-settings",
+      "path": "/activation/countryservicesettings",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getAllNumberCounts": {
+      "family": "activation",
+      "jsName": "getAllNumberCounts",
+      "pyName": "get_all_number_counts",
+      "slug": "countnumbers",
+      "path": "/activation/countnumbers",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getCountryNumberCounts": {
+      "family": "activation",
+      "jsName": "getCountryNumberCounts",
+      "pyName": "get_country_number_counts",
+      "slug": "country-countnumbers",
+      "path": "/activation/countnumbers/{country}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getServicePrice": {
+      "family": "activation",
+      "jsName": "getServicePrice",
+      "pyName": "get_service_price",
+      "slug": "service-price",
+      "path": "/activation/serviceprice/{country}/{service}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "service",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voice",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getCountryOperatorPrices": {
+      "family": "activation",
+      "jsName": "getCountryOperatorPrices",
+      "pyName": "get_country_operator_prices",
+      "slug": "country-operator-prices",
+      "path": "/activation/serviceprice/{country}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voice",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getServicePrices": {
+      "family": "activation",
+      "jsName": "getServicePrices",
+      "pyName": "get_service_prices",
+      "slug": "service-prices",
+      "path": "/activation/serviceprices/{service}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "service",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^opt[0-9]{1,8}$"
+          }
+        },
+        {
+          "name": "voice",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getAllServicePrices": {
+      "family": "activation",
+      "jsName": "getAllServicePrices",
+      "pyName": "get_all_service_prices",
+      "slug": "all-service-prices",
+      "path": "/activation/servicesprices",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "voice",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getNumber": {
+      "family": "activation",
+      "jsName": "getNumber",
+      "pyName": "get_number",
+      "slug": "get-number",
+      "path": "/activation/number/{country}/{service}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "service",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voice",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "activation.getNumberByOperator": {
+      "family": "activation",
+      "jsName": "getNumberByOperator",
+      "pyName": "get_number_by_operator",
+      "slug": "get-number-by-operator",
+      "path": "/activation/number/{country}/{service}/{operator}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "service",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "operator",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "voice",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "default": 0
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "activation.receiveSms": {
+      "family": "activation",
+      "jsName": "receiveSms",
+      "pyName": "receive_sms",
+      "slug": "receive-sms",
+      "path": "/activation/sms/{orderid}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "partnerkey",
+          "in": "header",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "orderid",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "pending": true,
+      "noStock": false,
+      "stateful": true
+    },
+    "activation.getOrders": {
+      "family": "activation",
+      "jsName": "getOrders",
+      "pyName": "get_orders",
+      "slug": "orders",
+      "path": "/activation/orders",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getNumberStatus": {
+      "family": "activation",
+      "jsName": "getNumberStatus",
+      "pyName": "get_number_status",
+      "slug": "number-status",
+      "path": "/activation/numberstatus/{number}/{service}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "number",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{5,}$"
+          }
+        },
+        {
+          "name": "service",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.clearSms": {
+      "family": "activation",
+      "jsName": "clearSms",
+      "pyName": "clear_sms",
+      "slug": "clear-sms",
+      "path": "/activation/clearsms/{orderid}",
+      "method": "PUT",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "activation.stopSms": {
+      "family": "activation",
+      "jsName": "stopSms",
+      "pyName": "stop_sms",
+      "slug": "stop-sms",
+      "path": "/activation/stopsms/{orderid}",
+      "method": "PUT",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "activation.cancelOrder": {
+      "family": "activation",
+      "jsName": "cancelOrder",
+      "pyName": "cancel_order",
+      "slug": "cancel-order",
+      "path": "/activation/cancelorder/{orderid}",
+      "method": "PUT",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "activation.blockNumber": {
+      "family": "activation",
+      "jsName": "blockNumber",
+      "pyName": "block_number",
+      "slug": "block-number",
+      "path": "/activation/blocknumber/{orderid}",
+      "method": "PUT",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.getCountries": {
+      "family": "rental",
+      "jsName": "getCountries",
+      "pyName": "get_countries",
+      "slug": "countries",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [],
+      "action": "getcountries",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getDefaultServices": {
+      "family": "rental",
+      "jsName": "getDefaultServices",
+      "pyName": "get_default_services",
+      "slug": "default-services",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [],
+      "action": "get_default_services",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getCountriesByService": {
+      "family": "rental",
+      "jsName": "getCountriesByService",
+      "pyName": "get_countries_by_service",
+      "slug": "countries-by-service",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [
+        {
+          "name": "service",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "opt20"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "week"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      ],
+      "action": "get_country_by_service",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getData": {
+      "family": "rental",
+      "jsName": "getData",
+      "pyName": "get_data",
+      "slug": "data",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "optional",
+      "params": [
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "KZ",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": "week",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "extend",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "1"
+          }
+        }
+      ],
+      "action": "getdata",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getDataWithProviders": {
+      "family": "rental",
+      "jsName": "getDataWithProviders",
+      "pyName": "get_data_with_providers",
+      "slug": "data-by-provider",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "optional",
+      "params": [
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "KZ",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": "week",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "extend",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "1"
+          }
+        }
+      ],
+      "action": "getdataWithProviders",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getCount": {
+      "family": "rental",
+      "jsName": "getCount",
+      "pyName": "get_count",
+      "slug": "count",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "KZ",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": "week",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "getcount",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getCountWithProviders": {
+      "family": "rental",
+      "jsName": "getCountWithProviders",
+      "pyName": "get_count_with_providers",
+      "slug": "counts-by-provider",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "optional",
+      "params": [
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "KZ",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": "week",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "getCountWithProviders",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getMultiServiceCount": {
+      "family": "rental",
+      "jsName": "getMultiServiceCount",
+      "pyName": "get_multi_service_count",
+      "slug": "multi-service-count",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "KZ",
+            "type": "string"
+          }
+        },
+        {
+          "name": "services",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "opt1,opt2",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "week",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "get_count_multi",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getCanadaPaypalDays": {
+      "family": "rental",
+      "jsName": "getCanadaPaypalDays",
+      "pyName": "get_canada_paypal_days",
+      "slug": "canada-paypal-days",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [],
+      "action": "get_days_canada_paypal",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getMinimumPaypalDays": {
+      "family": "rental",
+      "jsName": "getMinimumPaypalDays",
+      "pyName": "get_minimum_paypal_days",
+      "slug": "minimum-paypal-days",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "CA"
+          }
+        },
+        {
+          "name": "service",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "opt83"
+          }
+        }
+      ],
+      "action": "get_min_paypal_days",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.create": {
+      "family": "rental",
+      "jsName": "create",
+      "pyName": "create",
+      "slug": "create",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "week"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "KZ"
+          }
+        },
+        {
+          "name": "service",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "opt6"
+          }
+        },
+        {
+          "name": "provider",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "T-Mobile"
+          }
+        },
+        {
+          "name": "partner_key",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "partnerkeyhere"
+          }
+        }
+      ],
+      "action": "create",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.createMulti": {
+      "family": "rental",
+      "jsName": "createMulti",
+      "pyName": "create_multi",
+      "slug": "create-multi",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "week"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "country",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "KZ"
+          }
+        },
+        {
+          "name": "services",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "example": "opt6,opt7,opt8"
+          }
+        },
+        {
+          "name": "provider",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "T-Mobile"
+          }
+        },
+        {
+          "name": "partner_key",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "example": "partnerkeyhere"
+          }
+        }
+      ],
+      "action": "create_multi",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.addServiceToOrder": {
+      "family": "rental",
+      "jsName": "addServiceToOrder",
+      "pyName": "add_service_to_order",
+      "slug": "add-service",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 56547,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "service",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "opt89",
+            "type": "string"
+          }
+        },
+        {
+          "name": "pnumber",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "79335445295",
+            "type": "string"
+          }
+        },
+        {
+          "name": "rent_days",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 7,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "add_service_to_order",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.getOrders": {
+      "family": "rental",
+      "jsName": "getOrders",
+      "pyName": "get_orders",
+      "slug": "orders",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [],
+      "action": "orders",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.activate": {
+      "family": "rental",
+      "jsName": "activate",
+      "pyName": "activate",
+      "slug": "activate",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      ],
+      "action": "activate",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.getSms": {
+      "family": "rental",
+      "jsName": "getSms",
+      "pyName": "get_sms",
+      "slug": "sms",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "example": 123
+          }
+        }
+      ],
+      "action": "sms",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.prolong": {
+      "family": "rental",
+      "jsName": "prolong",
+      "pyName": "prolong",
+      "slug": "prolong",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 123,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "week",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 1,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "prolong",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.prolongByDays": {
+      "family": "rental",
+      "jsName": "prolongByDays",
+      "pyName": "prolong_by_days",
+      "slug": "prolong-max",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 123,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": "day",
+            "type": "string"
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "example": 5,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "prolong_max",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.deleteOrder": {
+      "family": "rental",
+      "jsName": "deleteOrder",
+      "pyName": "delete_order",
+      "slug": "delete",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "delete",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "rental.getHistory": {
+      "family": "rental",
+      "jsName": "getHistory",
+      "pyName": "get_history",
+      "slug": "history",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 0,
+            "type": "integer"
+          }
+        },
+        {
+          "name": "take",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "example": 10,
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "get_rent_history",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.getRestoreCost": {
+      "family": "rental",
+      "jsName": "getRestoreCost",
+      "pyName": "get_restore_cost",
+      "slug": "restore-precalculation",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "restore_user_precalc",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "rental.restore": {
+      "family": "rental",
+      "jsName": "restore",
+      "pyName": "restore",
+      "slug": "restore",
+      "path": "/api/rent.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "restore_user",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "email.getProviders": {
+      "family": "email",
+      "jsName": "getProviders",
+      "pyName": "get_providers",
+      "slug": "providers",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [],
+      "action": "get_providers",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.getData": {
+      "family": "email",
+      "jsName": "getData",
+      "pyName": "get_data",
+      "slug": "services",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [
+        {
+          "name": "pcode",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "omitEmpty": true
+        }
+      ],
+      "action": "get_data",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.getCount": {
+      "family": "email",
+      "jsName": "getCount",
+      "pyName": "get_count",
+      "slug": "counts",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "none",
+      "params": [
+        {
+          "name": "pcode",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "omitEmpty": true
+        }
+      ],
+      "action": "get_count",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.createOrder": {
+      "family": "email",
+      "jsName": "createOrder",
+      "pyName": "create_order",
+      "slug": "create",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "scode",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "pcode",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "omitEmpty": true
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "day",
+              "week",
+              "month"
+            ]
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "action": "create_order",
+      "pending": false,
+      "noStock": true,
+      "stateful": true
+    },
+    "email.getOrders": {
+      "family": "email",
+      "jsName": "getOrders",
+      "pyName": "get_orders",
+      "slug": "orders",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [],
+      "action": "get_orders",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.getMails": {
+      "family": "email",
+      "jsName": "getMails",
+      "pyName": "get_mails",
+      "slug": "messages",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "t",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "default": 50
+          }
+        },
+        {
+          "name": "s",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        {
+          "name": "sq",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "action": "get_mails",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.getMailBody": {
+      "family": "email",
+      "jsName": "getMailBody",
+      "pyName": "get_mail_body",
+      "slug": "message-body",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "emailid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "get_mail_body",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.buyAlias": {
+      "family": "email",
+      "jsName": "buyAlias",
+      "pyName": "buy_alias",
+      "slug": "buy-alias",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "aliasid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "buy_alias",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "email.getMailsByAlias": {
+      "family": "email",
+      "jsName": "getMailsByAlias",
+      "pyName": "get_mails_by_alias",
+      "slug": "alias-messages",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "aliasid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "t",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "default": 50
+          }
+        },
+        {
+          "name": "s",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "default": 0
+          }
+        },
+        {
+          "name": "sq",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "action": "get_mails_by_alias",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.prolongOrder": {
+      "family": "email",
+      "jsName": "prolongOrder",
+      "pyName": "prolong_order",
+      "slug": "prolong",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "dtype",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "day",
+              "week",
+              "month"
+            ]
+          }
+        },
+        {
+          "name": "dcount",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "action": "prolong_order",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "email.cancelOrder": {
+      "family": "email",
+      "jsName": "cancelOrder",
+      "pyName": "cancel_order",
+      "slug": "cancel",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "cancel_order",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    },
+    "email.getArchivedOrders": {
+      "family": "email",
+      "jsName": "getArchivedOrders",
+      "pyName": "get_archived_orders",
+      "slug": "archived",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [],
+      "action": "get_archived_orders",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.calcRestoreOrder": {
+      "family": "email",
+      "jsName": "calcRestoreOrder",
+      "pyName": "calc_restore_order",
+      "slug": "restoration-cost",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "calc_restore_order",
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "email.restoreOrder": {
+      "family": "email",
+      "jsName": "restoreOrder",
+      "pyName": "restore_order",
+      "slug": "restore",
+      "path": "/api/rent_email.php",
+      "method": "GET",
+      "baseUrl": "https://smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "orderid",
+          "in": "query",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "action": "restore_order",
+      "pending": false,
+      "noStock": false,
+      "stateful": true
+    }
+  }
+}
