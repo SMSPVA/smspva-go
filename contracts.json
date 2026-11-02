@@ -1,7 +1,7 @@
 {
   "version": 1,
   "sources": {
-    "activation": "346b66b937d5dadb70cf3db8d12bb71e1d5470afb7664b1b8b7fce28b61128da",
+    "activation": "435794a89b6f80c674fb6c6a6bf146a03f89b21c34f03fd90805eec70fd2a38f",
     "rental": "f827b7dc7dca866f9e4d62c00629e53a3eec9321ab91d600543eabce596b0a43",
     "email": "6535e673f8abdd399cd8c839ccb7d1da3a861392467f76321c6ad0d257f401a5"
   },
@@ -114,6 +114,43 @@
       "pyName": "get_country_number_counts",
       "slug": "country-countnumbers",
       "path": "/activation/countnumbers/{country}",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [
+        {
+          "name": "country",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getAllNumberCountsCompact": {
+      "family": "activation",
+      "jsName": "getAllNumberCountsCompact",
+      "pyName": "get_all_number_counts_compact",
+      "slug": "countnumberscompact",
+      "path": "/activation/countnumberscompact",
+      "method": "GET",
+      "baseUrl": "https://api.smspva.com",
+      "auth": "required",
+      "params": [],
+      "pending": false,
+      "noStock": false,
+      "stateful": false
+    },
+    "activation.getCountryNumberCountsCompact": {
+      "family": "activation",
+      "jsName": "getCountryNumberCountsCompact",
+      "pyName": "get_country_number_counts_compact",
+      "slug": "country-countnumberscompact",
+      "path": "/activation/countnumberscompact/{country}",
       "method": "GET",
       "baseUrl": "https://api.smspva.com",
       "auth": "required",

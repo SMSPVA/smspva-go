@@ -57,8 +57,8 @@ const secret = "go-local-key-+&?=/"
 
 func TestAll56NamedMethodsWire(t *testing.T) {
 	cases := fixtures(t)
-	if len(cases) != 56 || len(namedCalls) != 56 {
-		t.Fatal("Expected all56namedmethods")
+	if len(cases) != 58 || len(namedCalls) != 58 {
+		t.Fatal("Expected all58namedmethods")
 	}
 	var current fixture
 	var calls int
@@ -124,7 +124,7 @@ func TestAll56NamedMethodsWire(t *testing.T) {
 			}
 		})
 	}
-	if calls != 56 {
+	if calls != 58 {
 		t.Fatalf("Expected56calls,got%d", calls)
 	}
 }

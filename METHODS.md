@@ -13,6 +13,8 @@ Generated from the shared SDK contracts. All methods accept a context and option
 | `client.Activation.GetMessageTypeSettings` | `GET /activation/countryservicesettings` |
 | `client.Activation.GetAllNumberCounts` | `GET /activation/countnumbers` |
 | `client.Activation.GetCountryNumberCounts` | `GET /activation/countnumbers/{country}` |
+| `client.Activation.GetAllNumberCountsCompact` | `GET /activation/countnumberscompact` |
+| `client.Activation.GetCountryNumberCountsCompact` | `GET /activation/countnumberscompact/{country}` |
 | `client.Activation.GetServicePrice` | `GET /activation/serviceprice/{country}/{service}` |
 | `client.Activation.GetCountryOperatorPrices` | `GET /activation/serviceprice/{country}` |
 | `client.Activation.GetServicePrices` | `GET /activation/serviceprices/{service}` |
@@ -72,3 +74,4 @@ Generated from the shared SDK contracts. All methods accept a context and option
 | `client.Email.GetArchivedOrders` | `GET /api/rent_email.php?method=get_archived_orders` |
 | `client.Email.CalcRestoreOrder` | `GET /api/rent_email.php?method=calc_restore_order` |
 | `client.Email.RestoreOrder` | `GET /api/rent_email.php?method=restore_order` |
+

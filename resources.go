@@ -52,6 +52,20 @@ func (r *Activation) GetCountryNumberCounts(ctx context.Context, params Activati
 	return r.client.call(ctx, "activation.getCountryNumberCounts", params, options...)
 }
 
+// GetAllNumberCountsCompact calls GET /activation/countnumberscompact.
+func (r *Activation) GetAllNumberCountsCompact(ctx context.Context, options ...RequestOption) (Response, error) {
+	return r.client.call(ctx, "activation.getAllNumberCountsCompact", nil, options...)
+}
+
+type ActivationGetCountryNumberCountsCompactParams struct {
+	Country *string "json:\"country,omitempty\"" // Required.
+}
+
+// GetCountryNumberCountsCompact calls GET /activation/countnumberscompact/{country}.
+func (r *Activation) GetCountryNumberCountsCompact(ctx context.Context, params ActivationGetCountryNumberCountsCompactParams, options ...RequestOption) (Response, error) {
+	return r.client.call(ctx, "activation.getCountryNumberCountsCompact", params, options...)
+}
+
 type ActivationGetServicePriceParams struct {
 	Country *string "json:\"country,omitempty\"" // Required.
 	Service *string "json:\"service,omitempty\"" // Required.
