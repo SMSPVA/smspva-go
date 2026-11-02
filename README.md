@@ -1,11 +1,11 @@
 # SMSPVA Go SDK
 
-Official Go client for [SMSPVA](https://smspva.com/), a service for receiving verification SMS, renting phone numbers and renting private email addresses. Covers all 56 methods in Activation V2 (20), Rental (22) and Private Email (14). Requires Go 1.22+ and uses only the standard library. This is an alpha release. Alternative API is excluded.
+Official Go client for [SMSPVA](https://smspva.com/), a service for receiving verification SMS, renting phone numbers and renting private email addresses. Covers all 58 methods in Activation V2 (22), Rental (22) and Private Email (14). Requires Go 1.22+ and uses only the standard library. This is an alpha release. Alternative API is excluded.
 
 ## Installation
 
 ```sh
-go get github.com/SMSPVA/smspva-go@v0.1.0-alpha.1
+go get github.com/SMSPVA/smspva-go@v0.1.0-alpha.2
 ```
 
 [Sign in to your SMSPVA account](https://smspva.com/signin.html), open **Profile and ApiKey**, and set **`SMSPVA_API_KEY`** in your server environment. Keep it out of source control. The example reads your balance and reference lists; it does not create an order.
@@ -117,3 +117,19 @@ MIT. See [LICENSE](https://github.com/SMSPVA/smspva-go/blob/main/LICENSE).
 Read the [SMSPVA API documentation](https://docs.smspva.com/) and the [method index](https://github.com/SMSPVA/smspva-go/blob/main/METHODS.md) for parameters, response codes and workflows. SMSPVA supports [phone number rentals](https://smspva.com/rent) and [private email rentals](https://smspva.com/rent-mail.html); availability and prices come from the live API.
 
 For account or billing questions, visit the [SMSPVA help center](https://smspva.com/help.html). Report SDK bugs through [GitHub issues](https://github.com/SMSPVA/smspva-go/issues), without API keys or private message content.
+
+## Compact number counts and operator ratings
+
+Using an already configured client:
+
+```go
+allCounts, err := client.Activation.GetAllNumberCountsCompact(ctx)
+// Handle err before using allCounts.
+country := "ua"
+uaCounts, err := client.Activation.GetCountryNumberCountsCompact(ctx, smspva.ActivationGetCountryNumberCountsCompactParams{Country: &country})
+// Handle err before using uaCounts.
+```
+
+Both requests use GET and the account API key in the `apikey` header. Country codes are case-insensitive; an unknown country returns `data: []`. No extra query parameters are required. Results are cached by the API for 60 seconds, independently for all countries and for each country.
+
+The SDK preserves `Operator`, `Country`, `Services`, `Rating` and `ServiceRatings` exactly as returned, including negative counts and missing or invalid ratings. It does not insert computed rating fields. For non-`Donor*` operators, the effective rating is 1. For `Donor*` operators, use a service rating if it is an integer from 1 to 10, then a valid overall rating; otherwise the rating is undefined. Lower is better.

@@ -40,6 +40,16 @@ var namedCalls = map[string]func(context.Context, *Client, json.RawMessage) (Res
 		}
 		return c.Activation.GetCountryNumberCounts(ctx, p)
 	},
+	"activation.getAllNumberCountsCompact": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
+		return c.Activation.GetAllNumberCountsCompact(ctx)
+	},
+	"activation.getCountryNumberCountsCompact": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
+		var p ActivationGetCountryNumberCountsCompactParams
+		if err := json.Unmarshal(raw, &p); err != nil {
+			return Response{}, err
+		}
+		return c.Activation.GetCountryNumberCountsCompact(ctx, p)
+	},
 	"activation.getServicePrice": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
 		var p ActivationGetServicePriceParams
 		if err := json.Unmarshal(raw, &p); err != nil {

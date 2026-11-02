@@ -161,6 +161,116 @@
     "auth": "required"
   },
   {
+    "key": "activation.getAllNumberCountsCompact",
+    "family": "activation",
+    "jsName": "getAllNumberCountsCompact",
+    "pyName": "get_all_number_counts_compact",
+    "path": "/activation/countnumberscompact",
+    "method": "GET",
+    "params": {},
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "Operator": "DonorExample",
+          "Country": "UA",
+          "Services": {
+            "opt1": -7,
+            "opt20": 9999
+          },
+          "Rating": 3,
+          "ServiceRatings": {
+            "opt20": 5
+          }
+        },
+        {
+          "Operator": "ExampleOperator",
+          "Country": "UA",
+          "Services": {
+            "opt1": -2,
+            "opt20": 500
+          }
+        },
+        {
+          "Operator": "DonorInvalid",
+          "Country": "UA",
+          "Services": {
+            "opt20": 0
+          },
+          "Rating": 11,
+          "ServiceRatings": {
+            "opt20": 1.5
+          }
+        },
+        {
+          "Operator": "DonorMissing",
+          "Country": "UA",
+          "Services": {
+            "opt20": 1
+          },
+          "ServiceRatings": {}
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getCountryNumberCountsCompact",
+    "family": "activation",
+    "jsName": "getCountryNumberCountsCompact",
+    "pyName": "get_country_number_counts_compact",
+    "path": "/activation/countnumberscompact/{country}",
+    "method": "GET",
+    "params": {
+      "country": "UA"
+    },
+    "response": {
+      "statusCode": 200,
+      "data": [
+        {
+          "Operator": "DonorExample",
+          "Country": "UA",
+          "Services": {
+            "opt1": -7,
+            "opt20": 9999
+          },
+          "Rating": 3,
+          "ServiceRatings": {
+            "opt20": 5
+          }
+        },
+        {
+          "Operator": "ExampleOperator",
+          "Country": "UA",
+          "Services": {
+            "opt1": -2,
+            "opt20": 500
+          }
+        },
+        {
+          "Operator": "DonorInvalid",
+          "Country": "UA",
+          "Services": {
+            "opt20": 0
+          },
+          "Rating": 11,
+          "ServiceRatings": {
+            "opt20": 1.5
+          }
+        },
+        {
+          "Operator": "DonorMissing",
+          "Country": "UA",
+          "Services": {
+            "opt20": 1
+          },
+          "ServiceRatings": {}
+        }
+      ]
+    },
+    "auth": "required"
+  },
+  {
     "key": "activation.getServicePrice",
     "family": "activation",
     "jsName": "getServicePrice",
