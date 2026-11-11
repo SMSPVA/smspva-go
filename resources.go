@@ -131,6 +131,36 @@ func (r *Activation) GetNumberByOperator(ctx context.Context, params ActivationG
 	return r.client.call(ctx, "activation.getNumberByOperator", params, options...)
 }
 
+type ActivationRepeatNumberParams struct {
+	Number  *string "json:\"number,omitempty\""  // Required.
+	Service *string "json:\"service,omitempty\"" // Required.
+}
+
+// RepeatNumber calls POST /activation/repeatnumber/{number}/{service}.
+// This operation changes state or may charge the account. It is never retried by the SDK.
+func (r *Activation) RepeatNumber(ctx context.Context, params ActivationRepeatNumberParams, options ...RequestOption) (Response, error) {
+	return r.client.call(ctx, "activation.repeatNumber", params, options...)
+}
+
+type ActivationGetPhoneStatusParams struct {
+	OrderID *int64 "json:\"orderid,omitempty\"" // Required.
+}
+
+// GetPhoneStatus calls GET /activation/statusphone/{orderid}.
+func (r *Activation) GetPhoneStatus(ctx context.Context, params ActivationGetPhoneStatusParams, options ...RequestOption) (Response, error) {
+	return r.client.call(ctx, "activation.getPhoneStatus", params, options...)
+}
+
+type ActivationStartSmsParams struct {
+	OrderID *int64 "json:\"orderid,omitempty\"" // Required.
+}
+
+// StartSms calls PUT /activation/startsms/{orderid}.
+// This operation changes state or may charge the account. It is never retried by the SDK.
+func (r *Activation) StartSms(ctx context.Context, params ActivationStartSmsParams, options ...RequestOption) (Response, error) {
+	return r.client.call(ctx, "activation.startSms", params, options...)
+}
+
 type ActivationReceiveSmsParams struct {
 	PartnerKey *string "json:\"partnerkey,omitempty\"" // Optional.
 	OrderID    *int64  "json:\"orderid,omitempty\""    // Required.

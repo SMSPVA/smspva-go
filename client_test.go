@@ -57,8 +57,8 @@ const secret = "go-local-key-+&?=/"
 
 func TestAll56NamedMethodsWire(t *testing.T) {
 	cases := fixtures(t)
-	if len(cases) != 58 || len(namedCalls) != 58 {
-		t.Fatal("Expected all58namedmethods")
+	if len(cases) != 61 || len(namedCalls) != 61 {
+		t.Fatal("Expected all61namedmethods")
 	}
 	var current fixture
 	var calls int
@@ -124,7 +124,7 @@ func TestAll56NamedMethodsWire(t *testing.T) {
 			}
 		})
 	}
-	if calls != 58 {
+	if calls != 61 {
 		t.Fatalf("Expected56calls,got%d", calls)
 	}
 }
@@ -205,6 +205,16 @@ func TestPendingNoStockAndErrors(t *testing.T) {
 	response, err := client.Activation.ReceiveSms(context.Background(), ActivationReceiveSmsParams{OrderID: Ptr(int64(123))})
 	if err != nil || !IsPending(response) {
 		t.Fatalf("Pendingnotreturned: %v", err)
+	}
+	body = `{"statusCode":202,"error":{"type":"NUMBER_NOT_READY","description":"Wait"},"retryAfter":17}`
+	response, err = client.Activation.RepeatNumber(context.Background(), ActivationRepeatNumberParams{Number: Ptr("01234"), Service: Ptr("opt164")})
+	if err != nil || string(response.Body) != body {
+		t.Fatalf("Number pending response changed: %v", err)
+	}
+	body = `{"statusCode":202,"error":{"type":"PHONE_NOT_READY","description":"Wait"}}`
+	response, err = client.Activation.GetPhoneStatus(context.Background(), ActivationGetPhoneStatusParams{OrderID: Ptr(int64(123))})
+	if err != nil || string(response.Body) != body {
+		t.Fatalf("Phone pending response changed: %v", err)
 	}
 	status = 200
 	body = `{"status":2}`

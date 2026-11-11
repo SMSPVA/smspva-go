@@ -92,6 +92,27 @@ var namedCalls = map[string]func(context.Context, *Client, json.RawMessage) (Res
 		}
 		return c.Activation.GetNumberByOperator(ctx, p)
 	},
+	"activation.repeatNumber": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
+		var p ActivationRepeatNumberParams
+		if err := json.Unmarshal(raw, &p); err != nil {
+			return Response{}, err
+		}
+		return c.Activation.RepeatNumber(ctx, p)
+	},
+	"activation.getPhoneStatus": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
+		var p ActivationGetPhoneStatusParams
+		if err := json.Unmarshal(raw, &p); err != nil {
+			return Response{}, err
+		}
+		return c.Activation.GetPhoneStatus(ctx, p)
+	},
+	"activation.startSms": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
+		var p ActivationStartSmsParams
+		if err := json.Unmarshal(raw, &p); err != nil {
+			return Response{}, err
+		}
+		return c.Activation.StartSms(ctx, p)
+	},
 	"activation.receiveSms": func(ctx context.Context, c *Client, raw json.RawMessage) (Response, error) {
 		var p ActivationReceiveSmsParams
 		if err := json.Unmarshal(raw, &p); err != nil {
