@@ -430,6 +430,67 @@
     "auth": "required"
   },
   {
+    "key": "activation.repeatNumber",
+    "family": "activation",
+    "jsName": "repeatNumber",
+    "pyName": "repeat_number",
+    "path": "/activation/repeatnumber/{number}/{service}",
+    "method": "POST",
+    "params": {
+      "number": "746463283",
+      "service": "opt164"
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456,
+        "phoneNumber": "746463283",
+        "countryCode": "+44",
+        "orderExpireIn": 900,
+        "price": 0.75
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.getPhoneStatus",
+    "family": "activation",
+    "jsName": "getPhoneStatus",
+    "pyName": "get_phone_status",
+    "path": "/activation/statusphone/{orderid}",
+    "method": "GET",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456,
+        "ready": true
+      }
+    },
+    "auth": "required"
+  },
+  {
+    "key": "activation.startSms",
+    "family": "activation",
+    "jsName": "startSms",
+    "pyName": "start_sms",
+    "path": "/activation/startsms/{orderid}",
+    "method": "PUT",
+    "params": {
+      "orderid": 123456
+    },
+    "response": {
+      "statusCode": 200,
+      "data": {
+        "orderId": 123456,
+        "orderExpireIn": 880
+      }
+    },
+    "auth": "required"
+  },
+  {
     "key": "activation.receiveSms",
     "family": "activation",
     "jsName": "receiveSms",

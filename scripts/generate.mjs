@@ -36,4 +36,4 @@ await writeFile(new URL('resources.go',root),source);
 await writeFile(new URL('named_calls_test.go',root),tests);
 await writeFile(new URL('METHODS.md',root),index);
 execFileSync(process.env.GOFMT ?? 'gofmt',['-w',fileURLToPath(new URL('resources.go',root)),fileURLToPath(new URL('named_calls_test.go',root))],{stdio:'inherit',windowsHide:true});
-console.log('Generated Go resources and 58 typed method test adapters.');
+console.log('Generated Go resources and 61 typed method test adapters.');

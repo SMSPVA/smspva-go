@@ -38,16 +38,17 @@ type parameter struct {
 	Schema    schema `json:"schema"`
 }
 type operation struct {
-	Family   string      `json:"family"`
-	Path     string      `json:"path"`
-	Method   string      `json:"method"`
-	BaseURL  string      `json:"baseUrl"`
-	Auth     string      `json:"auth"`
-	Action   string      `json:"action"`
-	Params   []parameter `json:"params"`
-	Pending  bool        `json:"pending"`
-	NoStock  bool        `json:"noStock"`
-	Stateful bool        `json:"stateful"`
+	Family      string      `json:"family"`
+	Path        string      `json:"path"`
+	Method      string      `json:"method"`
+	BaseURL     string      `json:"baseUrl"`
+	Auth        string      `json:"auth"`
+	Action      string      `json:"action"`
+	Params      []parameter `json:"params"`
+	PendingType string      `json:"pendingType"`
+	Pending     bool        `json:"pending"`
+	NoStock     bool        `json:"noStock"`
+	Stateful    bool        `json:"stateful"`
 }
 
 var operations = func() map[string]operation {
@@ -113,6 +114,9 @@ func (r Response) MarshalJSON() ([]byte, error) {
 	return r.Body, nil
 }
 func IsPending(r Response) bool {
+	return isPendingType(r, "SMS_NOT_YET_RECEIVED")
+}
+func isPendingType(r Response, pendingType string) bool {
 	if r.HTTPStatus != 202 {
 		return false
 	}
@@ -125,7 +129,7 @@ func IsPending(r Response) bool {
 		return false
 	}
 	e, ok := body["error"].(map[string]any)
-	return ok && e["type"] == "SMS_NOT_YET_RECEIVED"
+	return ok && e["type"] == pendingType
 }
 func IsNoStock(r Response) bool {
 	if r.HTTPStatus != 200 {
@@ -390,7 +394,11 @@ func (c *Client) call(ctx context.Context, key string, input any, options ...Req
 		return Response{}, &ProtocolError{op.Family, key, response.StatusCode, op.Stateful}
 	}
 	result := Response{response.StatusCode, raw}
-	if op.Pending && IsPending(result) || op.NoStock && IsNoStock(result) {
+	pendingType := op.PendingType
+	if pendingType == "" {
+		pendingType = "SMS_NOT_YET_RECEIVED"
+	}
+	if op.Pending && isPendingType(result, pendingType) || op.NoStock && IsNoStock(result) {
 		return result, nil
 	}
 	success := numeric == "1"

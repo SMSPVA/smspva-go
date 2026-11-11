@@ -21,6 +21,9 @@ Generated from the shared SDK contracts. All methods accept a context and option
 | `client.Activation.GetAllServicePrices` | `GET /activation/servicesprices` |
 | `client.Activation.GetNumber` | `GET /activation/number/{country}/{service}` |
 | `client.Activation.GetNumberByOperator` | `GET /activation/number/{country}/{service}/{operator}` |
+| `client.Activation.RepeatNumber` | `POST /activation/repeatnumber/{number}/{service}` |
+| `client.Activation.GetPhoneStatus` | `GET /activation/statusphone/{orderid}` |
+| `client.Activation.StartSms` | `PUT /activation/startsms/{orderid}` |
 | `client.Activation.ReceiveSms` | `GET /activation/sms/{orderid}` |
 | `client.Activation.GetOrders` | `GET /activation/orders` |
 | `client.Activation.GetNumberStatus` | `GET /activation/numberstatus/{number}/{service}` |
